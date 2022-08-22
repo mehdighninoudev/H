@@ -81,14 +81,11 @@ WSGI_APPLICATION = 'spotjobsmemapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd2q1d4m6miltcb',
-        'USER': 'pwqjevkvsrrrwe',
-        'PASSWORD': '51b93d93d500a8deea57b7e601441e553212a3a6b4bc6f35f91950c9cfa603ae',
-        'HOST': 'ec2-54-204-241-136.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 # Password validation
@@ -142,4 +139,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "https://spot-jobs-react.vercel.app",
-]
+] 
