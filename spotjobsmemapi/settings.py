@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-3$yo+pt9#l6p@+@m@xey**evp9i9i&9kqo(!3jn63z(23udw-i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['spotjobsapi.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -141,5 +141,5 @@ django_heroku.settings(locals())
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "https://spot-jobs-react.vercel.app/",
+    "https://spot-jobs-react.vercel.app",
 ]
