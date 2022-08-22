@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-3$yo+pt9#l6p@+@m@xey**evp9i9i&9kqo(!3jn63z(23udw-i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['spotjobsapi.herokuapp.com']
 
 
 # Application definition
@@ -81,11 +82,11 @@ WSGI_APPLICATION = 'spotjobsmemapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '0000',
-        'HOST': 'localhost',
-        'PORT': ''
+        'NAME': 'd2q1d4m6miltcb',
+        'USER': 'pwqjevkvsrrrwe',
+        'PASSWORD': '51b93d93d500a8deea57b7e601441e553212a3a6b4bc6f35f91950c9cfa603ae',
+        'HOST': 'ec2-54-204-241-136.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -126,9 +127,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "/static/"
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -136,5 +141,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    "https://spot-jobs-react.vercel.app/",
 ]
