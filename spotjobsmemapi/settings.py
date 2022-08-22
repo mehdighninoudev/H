@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3$yo+pt9#l6p@+@m@xey**evp9i9i&9kqo(!3jn63z(23udw-i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -78,12 +78,16 @@ WSGI_APPLICATION = 'spotjobsmemapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-"""DATABASES = {
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '0000',
+        'HOST': 'localhost',
+        'PORT': ''
     }
-}"""
+}
 
 
 # Password validation
